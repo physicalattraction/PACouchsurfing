@@ -6,8 +6,8 @@ from cs_profile.models import Profile
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     # Profile detail
-    fields = ('id', 'public_name', 'public_address', 'avatar_url', 'is_verified', 'is_deleted',)
     readonly_fields = ('id',)
+    exclude = ('__none__',)
 
     # Profile list
     list_filter = ('is_verified', 'is_deleted',)
