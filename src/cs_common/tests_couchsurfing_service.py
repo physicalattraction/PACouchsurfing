@@ -1,3 +1,5 @@
+from unittest import skip
+
 from django.test import TestCase
 import json
 from PACouchsurfing.settings import get_secret
@@ -10,6 +12,7 @@ class CouchsurfingTestCase(TestCase):
         password = get_secret('TEST_USER_PASSWORD')
         self.cs = CouchsurfingService(email, password)
 
+    @skip('To be enabled later')
     def test_get_friendlist(self):
         generated_friendlist = self.cs.get_friendlist()
         print(json.dumps(generated_friendlist, indent=4))
